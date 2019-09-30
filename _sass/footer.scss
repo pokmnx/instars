@@ -1,0 +1,31 @@
+.main-footer {
+  background: rgba(45, 55, 106, 0.87);
+  
+  >div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+
+    a {
+      font-family: 'Nunito Sans';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+  
+    .social {
+      display: flex;
+      a {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

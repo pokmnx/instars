@@ -1,0 +1,678 @@
+// Material Text Inputs + Textarea
+
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+
+$gutter-width: 1.5rem !default;
+$input-height: 3rem !default;
+$input-border-color: #E3E3E3 !default;
+$input-border: 1px solid $input-border-color !default;
+$input-background: #fff !default;
+$input-error-color: #F44336 !default;
+$input-success-color: #8C9FBF !default;
+$input-focus-color: #8C9FBF !default;
+$input-font-size: 16px !default;
+$input-margin-bottom: 8px;
+$input-margin: 0 0 $input-margin-bottom 0 !default;
+$input-padding: 0 !default;
+$label-font-size: .8rem !default;
+$input-disabled-color: rgba(0,0,0, .42) !default;
+$input-disabled-solid-color: #949494 !default;
+$input-disabled-border: 1px dotted $input-disabled-color !default;
+$input-invalid-border: 1px solid $input-error-color !default;
+$input-icon-size: 2rem;
+$placeholder-text-color: lighten($input-border-color, 20%) !default;
+
+$select-border: 1px solid #f2f2f2 !default;
+$select-background: rgba(255, 255, 255, 0.90) !default;
+$select-focus: 1px solid lighten(#26a69a, 47%) !default;
+$select-option-hover: rgba(0,0,0,.08) !default;
+$select-option-focus: rgba(0,0,0,.08) !default;
+$select-option-selected: rgba(0,0,0,.03) !default;
+$select-padding: 5px !default;
+$select-radius: 2px !default;
+$select-disabled-color: rgba(0,0,0,.3) !default;
+
+$dropdown-bg-color: #fff !default;
+$dropdown-hover-bg-color: #eee !default;
+$dropdown-color: #26a69a !default;
+$dropdown-item-height: 50px !default;
+
+.signup-form {
+    ::placeholder {
+        color: $placeholder-text-color;
+    }
+      
+    input:not([type]),
+    input[type=text]:not(.browser-default),
+    input[type=password]:not(.browser-default),
+    input[type=email]:not(.browser-default),
+    input[type=url]:not(.browser-default),
+    input[type=time]:not(.browser-default),
+    input[type=date]:not(.browser-default),
+    input[type=datetime]:not(.browser-default),
+    input[type=datetime-local]:not(.browser-default),
+    input[type=tel]:not(.browser-default),
+    input[type=number]:not(.browser-default),
+    input[type=search]:not(.browser-default),
+    textarea.materialize-textarea {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #E3E3E3;
+        border-radius: 0;
+        outline: none;
+        height: $input-height;
+        width: 100%;
+        font-size: 16px;
+        margin: $input-margin;
+        padding: $input-padding;
+        box-shadow: none;
+        box-sizing: content-box;
+        transition: box-shadow .3s, border .3s;
+        padding-left: 4px;
+        font-family: 'Nunito Sans';
+        color: #303864;
+    
+        // Disabled input style
+        &:disabled,
+        &[readonly="readonly"] {
+            color: $input-disabled-color;
+            border-bottom: $input-disabled-border;
+        }
+    
+        // Disabled label style
+        &:disabled+label,
+        &[readonly="readonly"]+label {
+            color: $input-disabled-color;
+        }
+    
+        // Focused input style
+        &:focus:not([readonly]) {
+            border-bottom: 1px solid $input-focus-color;
+            box-shadow: 0 1px 0 0 $input-focus-color;
+        }
+    
+        // Focused label style
+        &:focus:not([readonly])+label {
+            color: $input-focus-color;
+        }
+    
+        // Hide helper text on data message
+        &.valid ~ .helper-text[data-success],
+        &:focus.valid ~ .helper-text[data-success],
+        &.invalid ~ .helper-text[data-error],
+        &:focus.invalid ~ .helper-text[data-error] {
+            @extend %hidden-text;
+        }
+    
+        // Valid Input Style
+        &.valid,
+        &:focus.valid {
+            @extend %valid-input-style;
+        }
+    
+        // Custom Success Message
+        &.valid ~ .helper-text:after,
+        &:focus.valid ~ .helper-text:after {
+            @extend %custom-success-message;
+        }
+    
+        &:focus.valid ~ label {
+            color: $input-success-color;
+        }
+    
+        // Invalid Input Style
+        &.invalid,
+        &:focus.invalid {
+            @extend %invalid-input-style;
+        }
+    
+        // Custom Error message
+        &.invalid ~ .helper-text:after,
+        &:focus.invalid ~ .helper-text:after {
+            @extend %custom-error-message;
+        }
+        &:focus.invalid ~ label {
+            color: $input-error-color;
+        }
+    
+        // Full width label when using validate for error messages
+        &.validate + label {
+            width: 100%;
+        }
+    
+        // Form Message Shared Styles
+        & + label:after {
+            @extend %input-after-style;
+        }
+    }
+    
+    
+    /* Validation Sass Placeholders */
+    %valid-input-style {
+        border-bottom: 1px solid $input-border-color;
+    }
+    %invalid-input-style {
+        border-bottom: $input-invalid-border;
+    }
+    %hidden-text {
+        color: transparent;
+        user-select: none;
+        pointer-events: none;
+    }
+    %custom-success-message {
+        content: attr(data-success);
+        color: $input-success-color;
+    }
+    %custom-error-message {
+        content: attr(data-error);
+        color: $input-error-color;
+    }
+    %input-after-style {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        transition: .2s opacity ease-out, .2s color ease-out;
+    }
+    
+    
+    // Styling for input field wrapper
+    .input-field {
+    // Inline styles
+        &.inline {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        
+            input, .select-dropdown {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        // Gutter spacing
+        &.col-md-6, &.col-md-12 {
+            label {
+                left: 2rem;
+            }
+        
+            .prefix ~ label,
+            .prefix ~ .validate ~ label {
+                width: calc(100% - 4.5rem);
+            }
+        }
+        
+        position: relative;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        
+        & > label {
+            color: $input-border-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 16px;
+            font-weight: normal;
+            cursor: text;
+            transition: transform .2s ease-out, color .2s ease-out;
+            transform-origin: 0% 100%;
+            text-align: initial;
+            transform: translateY(4px);
+            color: #8C9FBF;
+            font-family: 'Nunito Sans';
+        
+            &:not(.label-icon).active {
+                transform: translateY(-20px) scale(0.75);
+                transform-origin: 0 0;
+            }
+
+            &.error {
+                transform: translateY(33px) scale(0.75) !important;
+                color: #F44336;
+            }
+        }
+        
+        // Autofill + date + time inputs
+        & > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
+        & > input[type=date]:not(.browser-default) + label,
+        & > input[type=time]:not(.browser-default) + label {
+            transform: translateY(-20px) scale(.75);
+            transform-origin: 0 0;
+        }
+        
+        .helper-text {
+            &::after {
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        
+            position: relative;
+            min-height: 18px;
+            display: block;
+            font-size: 12px;
+            color: rgba(0,0,0,.54);
+        }
+        
+        // Prefix Icons
+        .prefix {
+            position: absolute;
+            width: $input-height;
+            font-size: $input-icon-size;
+            transition: color .2s;
+            top: ($input-height - $input-icon-size) / 2;
+        
+            &.active { color: $input-focus-color; }
+        }
+        
+        .prefix ~ input,
+        .prefix ~ textarea,
+        .prefix ~ label,
+        .prefix ~ .validate ~ label,
+        .prefix ~ .helper-text,
+        .prefix ~ .autocomplete-content {
+            margin-left: 3rem;
+            width: 92%;
+            width: calc(100% - 3rem);
+        }
+        
+        .prefix ~ label { margin-left: 3rem; }
+        
+        @media #{$medium-and-down} {
+            .prefix ~ input {
+                width: 86%;
+                width: calc(100% - 3rem);
+            }
+        }
+        
+        @media #{$small-and-down} {
+            .prefix ~ input {
+                width: 80%;
+                width: calc(100% - 3rem);
+            }
+        }
+    }
+    /* Search Field */
+    
+    .input-field input[type=search] {
+        display: block;
+        line-height: inherit;
+        transition: .3s background-color;
+    
+        .nav-wrapper & {
+            height: inherit;
+            padding-left: 4rem;
+            width: calc(100% - 4rem);
+            border: 0;
+            box-shadow: none;
+        }
+    
+        &:focus:not(.browser-default) {
+            background-color: $input-background;
+            border: 0;
+            box-shadow: none;
+            color: #444;
+        
+            & + label i,
+            & ~ .mdi-navigation-close,
+            & ~ .material-icons {
+                color: #444;
+            }
+        }
+    
+        & + .label-icon {
+            transform: none;
+            left: 1rem;
+        }
+    
+        & ~ .mdi-navigation-close,
+        & ~ .material-icons {
+            position: absolute;
+            top: 0;
+            right: 1rem;
+            color: transparent;
+            cursor: pointer;
+            font-size: $input-icon-size;
+            transition: .3s color;
+        }
+    }
+    
+    
+    /* Textarea */
+    
+    // Default textarea
+    textarea {
+        width: 100%;
+        height: $input-height;
+        background-color: transparent;
+    
+        &.materialize-textarea {
+            line-height: normal;
+            overflow-y: hidden; /* prevents scroll bar flash */
+            padding: .8rem 0 .8rem 0; /* prevents text jump on Enter keypress */
+            resize: none;
+            min-height: $input-height;
+            box-sizing: border-box;
+        }
+    }
+    
+    // For textarea autoresize
+    .hiddendiv {
+        visibility: hidden;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
+        padding-top: 1.2rem; /* prevents text jump on Enter keypress */
+        
+        // Reduces repaints
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+    
+    
+    /* Autocomplete */
+    .autocomplete-content {
+        li {
+            .highlight { color: #444; }
+        
+            img {
+                height: 40px;
+                width: 40px;
+                margin: 5px 15px;
+            }
+        }
+    }
+    
+    /* Character Counter */
+    .character-counter {
+        min-height: 18px;
+    }
+    
+    select { display: none; }
+    select.browser-default { display: block; }
+    
+    select {
+        background-color: $select-background;
+        width: 100%;
+        padding: $select-padding;
+        border: $select-border;
+        border-radius: $select-radius;
+        height: $input-height;
+    }
+    
+    .select-label {
+        position: absolute;
+    }
+    
+    .select-wrapper {
+        &.valid .helper-text[data-success],
+        &.invalid ~ .helper-text[data-error] {
+            @extend %hidden-text;
+        }
+
+        &.valid {
+            & > input.select-dropdown {
+                @extend %valid-input-style;
+            }
+
+            & ~ .helper-text:after {
+                @extend %custom-success-message;
+            }
+        }
+
+        &.invalid {
+            & > input.select-dropdown,
+            & > input.select-dropdown:focus {
+                @extend %invalid-input-style;
+            }
+
+            & ~ .helper-text:after {
+                @extend %custom-error-message;
+            }
+        }
+
+        &.valid + label,
+        &.invalid + label {
+            width: 100%;
+            pointer-events: none;
+        }
+
+        & + label:after {
+            @extend %input-after-style;
+        }
+
+        position: relative;
+
+        input.select-dropdown {
+            position: relative;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            // border-bottom: $input-border;
+            border-bottom: 1px solid $input-border-color;
+            outline: none;
+            height: $input-height;
+            line-height: $input-height;
+            width: 100%;
+            font-size: $input-font-size;
+            margin: $input-margin;
+            padding: 0;
+            padding-left: 4px;
+            display: block;
+            user-select:none;
+            z-index: 1;
+        }
+
+        .caret {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            z-index: 0;
+            fill: rgba(0,0,0,.87);
+        }
+
+        & + label {
+            position: absolute;
+            top: -26px;
+            font-size: 12px;
+        }
+    }
+    
+    // Disabled styles
+    select:disabled {
+        color: $input-disabled-color;
+    }
+    
+    .select-wrapper.disabled {
+        + label {
+            color: $input-disabled-color;
+        }
+        .caret {
+            fill: $input-disabled-color;
+        }
+    }
+    
+    .select-wrapper input.select-dropdown:disabled {
+        color: $input-disabled-color;
+        cursor: default;
+        user-select: none;
+    }
+    
+    .select-wrapper i {
+        color: $select-disabled-color;
+    }
+    
+    .select-dropdown li.disabled,
+    .select-dropdown li.disabled > span,
+    .select-dropdown li.optgroup {
+        color: $select-disabled-color;
+        background-color: transparent;
+    }
+    
+    body.keyboard-focused {
+        .select-dropdown.dropdown-content li:focus {
+            background-color: $select-option-focus;
+        }
+    }
+    
+    .select-dropdown.dropdown-content {
+        li {
+            &:hover {
+                background-color: $select-option-hover;
+            }
+
+            &.selected {
+                background-color: $select-option-selected;
+            }
+        }
+    }
+    
+    // Prefix Icons
+    .prefix ~ .select-wrapper {
+        margin-left: 3rem;
+        width: 92%;
+        width: calc(100% - 3rem);
+    }
+    
+    .prefix ~ label { margin-left: 3rem; }
+    
+    // Icons
+    .select-dropdown li {
+        img {
+            height: $dropdown-item-height - 10;
+            width: $dropdown-item-height - 10;
+            margin: 5px 15px;
+            float: right;
+        }
+    }
+    
+    // Optgroup styles
+    .select-dropdown li.optgroup {
+        border-top: 1px solid $dropdown-hover-bg-color;
+
+        &.selected > span {
+            color: rgba(0, 0, 0, .7);
+        }
+
+        & > span {
+            color: rgba(0, 0, 0, .4);
+        }
+
+        & ~ li.optgroup-option {
+            padding-left: 1rem;
+        }
+    }
+
+    .dropdown-content {
+        &:focus {
+            outline: 0;
+        }
+      
+        .z-depth-1 {
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+                        0 3px 1px -2px rgba(0,0,0,0.12),
+                        0 1px 5px 0 rgba(0,0,0,0.2);
+        }
+        background-color: $dropdown-bg-color;
+        margin: 0;
+        display: none;
+        min-width: 100px;
+        overflow-y: auto !important;
+        opacity: 0;
+        position: absolute;
+        left: 0 !important;
+        top: 0;
+        z-index: 9999; // TODO: Check if this doesn't break other things
+        transform-origin: 0 0;
+        padding: 0;
+        height: 400px !important;
+        @media (max-width: 767px) {
+            height: 200px !important;
+        }
+      
+        li {
+            &:hover, &.active {
+                background-color: $dropdown-hover-bg-color;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &.divider {
+                min-height: 0;
+                height: 1px;
+            }
+
+            & > a, & > span {
+                font-size: 16px;
+                color: $dropdown-color;
+                display: block;
+                line-height: 22px;
+                padding: (($dropdown-item-height - 22) / 2) 16px;
+            }
+
+            & > span > label {
+                top: 1px;
+                left: 0;
+                height: 18px;
+            }
+
+            // Icon alignment override
+            & > a > i {
+                height: inherit;
+                line-height: inherit;
+                float: left;
+                margin: 0 24px 0 0;
+                width: 24px;
+            }
+
+            clear: both;
+            color: rgba(0, 0, 0, 0.87);
+            cursor: pointer;
+            min-height: $dropdown-item-height;
+            line-height: 1.5rem;
+            width: 100%;
+            text-align: left;
+            margin: 0;
+            background-image: none;
+            padding: 0;
+        }
+    }
+
+    body.keyboard-focused {
+        .dropdown-content li:focus {
+            background-color: darken($dropdown-hover-bg-color, 8%);
+        }
+    }
+
+    // Input field specificity bugfix
+    .input-field.col .dropdown-content [type="checkbox"] + label {
+        top: 1px;
+        left: 0;
+        height: 18px;
+        transform: none;
+    }
+
+    .dropdown-trigger {
+        cursor: pointer;
+    }
+}

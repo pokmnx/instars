@@ -1,0 +1,66 @@
+{% include head.html %}
+<!-- {% include header.html %} -->
+
+<div class="main-content home">
+	<div class="main-width">
+		<div class="header">
+			<img src="{{ site.url }}{{ site.baseurl }}/assets/images/logo.svg">
+			<span>instars.com</span>
+		</div>
+		<div class="row main-form">
+			<div class="col-md-6 apply-form">
+				<div class="introducing">Introducing</div>
+				<h2>Earn Crypto While Preserving Your Privacy</h2>
+				<h5>Join us to earn cryptocurrency while preserving your privacy!</h5>
+				<form>
+					<input type="email" placeholder="Enter your email...">
+					<button>Get Early Access</button>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/product_shot.png">
+			</div>
+		</div>
+		<div class="features row justify-content-center">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-2 feature">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/giveaway.svg">
+				<label>Exclusive Giveaways</label>
+			</div>
+			<div class="col-md-2 feature">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/line.svg">
+			</div>
+			<div class="col-md-2 feature">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/privacy.svg">
+				<label>Privacy Preserving & Instant Payments</label>
+			</div>
+			<div class="col-md-2 feature">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/line.svg">
+			</div>
+			<div class="col-md-2 feature">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/extra.svg">
+				<label>Extra Earning Opportunities</label>
+			</div>
+		</div>
+		<hr>
+		<div class="giveaway">
+			Next Giveaway:
+			<a>$50 Gift Card</a>
+		</div>
+		<div class="countdown-wrapper">
+			<div id="countdown" class="countdown"></div>
+		</div>
+		<div class="actions">
+			<button class="reason">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/play.svg">
+				Why are we doing this?
+			</button>
+			<button class="access">
+				Get Early Access
+			</button>
+		</div>
+	</div>
+</div>
+
+{% include footer.html %}
