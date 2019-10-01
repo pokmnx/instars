@@ -1,5 +1,4 @@
 {% include head.html %}
-
 <div class="main-content home">
 	<div class="main-width">
 		<div class="header">
@@ -9,34 +8,37 @@
 	</div>
 	<div class="main-section">
 		<div class="row main-width main-form">
-			<div class="col-md-6 apply-form">
-				<div class="introducing">Introducing</div>
-				<h2>Earn Crypto While Preserving Your Privacy</h2>
-				<h5>Join us to earn cryptocurrency while preserving your privacy!</h5>
-				<form>
-					<input type="email" placeholder="Enter your email...">
-					<button>Get Early Access</button>
-				</form>
+			<div class="col-lg-6 col-md-8 apply-form">
+				<div class="introducing wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">Introducing</div>
+				<h2 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">Earn Crypto While Preserving Your Privacy</h2>
+				<h5 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Join us to earn cryptocurrency while preserving your privacy!</h5>
+				<div class="form">
+					<input class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" type="email" placeholder="Enter your email...">
+					<button class="wow fadeInUp vrlps-trigger" data-wow-duration="1s" data-wow-delay="1s" id="access">Get Early Access</button>
+				</div>
+			</div>
+			<div class="product-shot">
+				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/product_shot.png">
 			</div>
 		</div>
 	</div>	
 
 	<div class="main-width">
-		<div class="features row justify-content-center">
+		<div class="features row justify-content-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
 			<div class="col-md-1">
 			</div>
 			<div class="col-md-2 feature">
 				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/giveaway.svg">
 				<label>Exclusive Giveaways</label>
 			</div>
-			<div class="col-md-2 feature">
+			<div class="col-md-2 feature border">
 				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/line.svg">
 			</div>
 			<div class="col-md-2 feature">
 				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/privacy.svg">
 				<label>Privacy Preserving & Instant Payments</label>
 			</div>
-			<div class="col-md-2 feature">
+			<div class="col-md-2 feature border">
 				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/line.svg">
 			</div>
 			<div class="col-md-2 feature">
@@ -46,18 +48,18 @@
 		</div>
 		<hr>
 		<div class="giveaway">
-			Next Giveaway:
-			<a>$50 Gift Card</a>
+			<div class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">Next Giveaway:&nbsp;</div>
+			<a class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">$50 Gift Card</a>
 		</div>
-		<div class="countdown-wrapper">
+		<div class="countdown-wrapper wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
 			<div id="countdown" class="countdown"></div>
 		</div>
 		<div class="actions">
-			<button class="reason">
+			<button class="reason js-modal-btn wow fadeInLeft" data-video-id="352558829" data-wow-duration="1s" data-wow-delay="0.5s">
 				<img src="{{ site.url }}{{ site.baseurl }}/assets/images/play.svg">
 				Why are we doing this?
 			</button>
-			<button class="access">
+			<button id="top" class="access wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
 				Get Early Access
 			</button>
 		</div>

@@ -14,15 +14,24 @@ $clock-flip-font-color: white;
 $clock-flip-font-shadow: 0 1px 2px #000;
 
 
+
 .countdown.flip-clock-wrapper ul {
   height: $clock-height;
   margin: 0 $clock-flip-margin;
   width: $clock-flip-width;
   box-shadow: $clock-flip-shadow;
+  @media (max-width: 767px) {
+    height: $clock-height / 2;
+    margin: 0 $clock-flip-margin / 2;
+    width: $clock-flip-width / 2;
+  }
 }
 
 .countdown.flip-clock-wrapper ul li {
   line-height: $clock-height;
+  @media (max-width: 767px) {
+    line-height: $clock-height / 2;
+  }
 }
 
 .countdown.flip-clock-wrapper ul li a div div.inn {
@@ -30,30 +39,49 @@ $clock-flip-font-shadow: 0 1px 2px #000;
   color: $clock-flip-font-color;
   font-size: $clock-flip-font-size;
   text-shadow: $clock-flip-font-shadow;
+  @media (max-width: 767px) {
+    font-size: $clock-flip-font-size / 2;
+  }
 }
 
 .countdown.flip-clock-wrapper ul,
 .countdown.flip-clock-wrapper ul li a div div.inn {
   border-radius: $clock-flip-border-radius;
+  @media (max-width: 767px) {
+    border-radius: $clock-flip-border-radius / 2;
+  }
 }
 
 .countdown.flip-clock-wrapper ul li a div.down {
   border-bottom-left-radius: $clock-flip-border-radius;
   border-bottom-right-radius: $clock-flip-border-radius;
+  @media (max-width: 767px) {
+    border-bottom-left-radius: $clock-flip-border-radius / 2;
+    border-bottom-right-radius: $clock-flip-border-radius / 2;
+  }
 }
 
 .countdown.flip-clock-wrapper ul li a div.up:after {
   top: (($clock-height / 2) - 1px);
+  @media (max-width: 767px) {
+    top: (($clock-height / 4) - 1px);
+  }
 }
 
 .countdown .flip-clock-dot.top {
   top: ($clock-height / 2 - $clock-flip-font-size * 0.2 - $clock-dot-size / 2);
   display: none;
+  @media (max-width: 767px) {
+    top: ($clock-height / 2 - $clock-flip-font-size * 0.2 - $clock-dot-size / 2) / 2;
+  }
 }
 
 .countdown .flip-clock-dot.bottom {
   top: ($clock-height / 2 + $clock-flip-font-size * 0.2 - $clock-dot-size / 2);
   display: none;
+  @media (max-width: 767px) {
+    top: ($clock-height / 2 + $clock-flip-font-size * 0.2 - $clock-dot-size / 2) / 2;
+  }
 }
 
 .countdown .flip-clock-dot {
@@ -61,6 +89,11 @@ $clock-flip-font-shadow: 0 1px 2px #000;
   left: $clock-dot-size;
   width: $clock-dot-size;
   background: $clock-flip-bg;
+  @media (max-width: 767px) {
+    height: $clock-dot-size / 2;
+    left: $clock-dot-size / 2;
+    width: $clock-dot-size / 2;
+  }
 }
 
 .countdown .flip-clock-divider {
@@ -69,23 +102,44 @@ $clock-flip-font-shadow: 0 1px 2px #000;
   &:first-child {
     width: 0;
   }
+  @media (max-width: 767px) {
+    height: $clock-height / 2;
+    width: 1rem;
+  }
 }
 
+.countdown .flip-clock-divider.hours .flip-clock-label,
 .countdown .flip-clock-divider.seconds .flip-clock-label,
 .countdown .flip-clock-divider.minutes .flip-clock-label {
   right: -1 * $clock-flip-section-width;
+  @media (max-width: 767px) {
+    right: -1 * $clock-flip-section-width / 2;
+  }
 }
 
 .countdown .flip-clock-divider .flip-clock-label {
   color: $clock-flip-font-color;
   font-size: $clock-flip-font-size / 4;
   width: 2 * $clock-flip-width + 4 * $clock-flip-margin;
-  display: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  font-family: 'Nunito Sans';
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 16px;
+    width: $clock-flip-width + 2 * $clock-flip-margin;
+  }
 }
+
+
 
 .home {
   font-family: 'Nunito Sans';
   background: url(./images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .header {
     display: flex;
@@ -93,9 +147,16 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     align-items: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    @media (max-width: 767px) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
     img {
       width: 3.5rem;
       box-shadow: 0px 0.08px 0.08px rgba(0, 0, 0, 0.3);
+      @media (max-width: 767px) {
+        width: 2rem;
+      }
     }
     span {
       font-style: normal;
@@ -107,6 +168,9 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       letter-spacing: 1.3px;
       color: #FFFFFF;
       margin-left: 0.875rem;
+      @media (max-width: 767px) {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -114,10 +178,20 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     background-image: url('./images/product_shot.png');
     background-repeat: no-repeat;
     background-position: right center;
+    @media (max-width: 767px) {
+      background: none;
+    }
     .main-form {
       display: flex;
+      @media (max-width: 767px) {
+        display: block;
+      }
       
       .apply-form {
+        @media (max-width: 767px) {
+          padding-left: 0;
+          padding-right: 0;
+        }
         .introducing {
           font-size: 0.75rem;
           line-height: 1.125rem;
@@ -137,6 +211,8 @@ $clock-flip-font-shadow: 0 1px 2px #000;
           text-transform: uppercase;
     
           margin-bottom: 1.75rem;
+          @media (max-width: 767px) {
+          }
         }
     
         h2 {
@@ -148,6 +224,9 @@ $clock-flip-font-shadow: 0 1px 2px #000;
           color: #FFFFFF;
           text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
           margin-bottom: 2.5rem;
+          @media (max-width: 767px) {
+            font-size: 2rem;
+          }
         }
     
         h5 {
@@ -158,10 +237,16 @@ $clock-flip-font-shadow: 0 1px 2px #000;
           color: #C4C6D0;
           text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
           margin-bottom: 3.5rem;
+          @media (max-width: 767px) {
+            font-size: 1.25rem;
+          }
         }
     
-        form {
+        .form {
           display: flex;
+          @media (max-width: 767px) {
+            display: block;
+          }
           input {
             font-size: 1.125rem;
             line-height: 150%;
@@ -185,6 +270,10 @@ $clock-flip-font-shadow: 0 1px 2px #000;
             &:-moz-placeholder { /* Firefox 18- */
               color: #ACACAC;
             }
+            @media (max-width: 767px) {
+              width: 100%;
+              margin-bottom: 1rem;
+            }
           }
     
           button {
@@ -196,11 +285,21 @@ $clock-flip-font-shadow: 0 1px 2px #000;
             border-radius: 0.25rem;
             border: none;
             outline: none;
-            &:hover,
-            &:focus  {
+            &:hover {
               background: darken(#55ADEC, 12%);
             }
+            @media (max-width: 767px) {
+              width: 100%;
+            }
           }
+        }
+      }
+
+      .product-shot {
+        display: none;
+        @media (max-width: 767px) {
+          margin-top: 4rem;
+          display: block;
         }
       }
     }
@@ -208,11 +307,22 @@ $clock-flip-font-shadow: 0 1px 2px #000;
 
   .features {
     margin-top: 10rem;
+    @media (max-width: 767px) {
+      margin-top: 4rem;
+    }
     .feature {
       text-align: center;
+      &.border {
+        @media (max-width: 767px) {
+          display: none;
+        }   
+      }
+
       img {
         height: 3.75rem;
         margin-bottom: 1rem;
+        @media (max-width: 767px) {
+        }
       }
   
       label {
@@ -225,6 +335,12 @@ $clock-flip-font-shadow: 0 1px 2px #000;
         text-align: center;
         justify-content: center;
         color: #FFFFFF;
+        @media (max-width: 767px) {
+          margin-bottom: 2rem;
+          max-width: 12rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
   }
@@ -233,6 +349,10 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     margin-top: 5rem;
     margin-bottom: 5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.42);
+    @media (max-width: 767px) {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
   }
 
   .giveaway {
@@ -245,6 +365,15 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     display: flex;
     align-items: center;
     color: #F2F2F2;
+    padding-bottom: 3rem;
+
+    @media (max-width: 767px) {
+      display: block;
+      text-align: center;
+      div {
+        margin-bottom: 1rem;
+      }
+    }
 
     a {
       font-size: 2rem;
@@ -253,14 +382,23 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       color: #64D1B5;
       cursor: pointer;
       margin-left: 1rem;
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
     }
   }
 
   .countdown-wrapper {
     margin-top: 4rem;
+    @media (max-width: 767px) {
+
+    }
     .countdown {
       display: flex;
       justify-content: center;
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
 
       ul {
         background: #415183;
@@ -277,14 +415,23 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     align-items: center;
     padding-top: 5rem;
     padding-bottom: 6rem;
+    @media (max-width: 767px) {
+      display: block;
+    }
 
     .reason {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
       img {
         width: 1.75rem;
         margin-right: 1rem;
+        @media (max-width: 767px) {
+        }
       }
 
       font-size: 1.25rem;
@@ -297,8 +444,7 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       margin-right: 3rem;
       border: none;
       outline: none;
-      &:hover,
-      &:focus  {
+      &:hover {
         background: darken(#52B7FF, 12%);
       }
     }
@@ -314,9 +460,11 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       padding: 1.25rem 2rem;
       height: 4rem;
       outline: none;
-      &:hover,
-      &:focus  {
+      &:hover {
         background: rgba(0, 0, 0, 0.25);
+      }
+      @media (max-width: 767px) {
+        width: 100%;
       }
     }
   }
