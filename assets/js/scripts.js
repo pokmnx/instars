@@ -9,7 +9,7 @@ $(document).ready(function () {
 		countdown: true
 	});
 
-	$(".js-modal-btn").modalVideo({channel:'vimeo'});
+	$(".js-modal-btn").modalVideo({channel:'vimeo', autoplay: true});
 
 	$("#top").click(function () {
 		$('html, body').animate({
