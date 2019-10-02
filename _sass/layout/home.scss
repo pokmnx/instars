@@ -140,6 +140,10 @@ $clock-flip-font-shadow: 0 1px 2px #000;
   background: url(./images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
+  @media (max-width: 767px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
   .header {
     display: flex;
@@ -149,13 +153,13 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     padding-bottom: 4rem;
     @media (max-width: 767px) {
       padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-bottom: 4rem;
     }
     img {
       width: 3.5rem;
       box-shadow: 0px 0.08px 0.08px rgba(0, 0, 0, 0.3);
       @media (max-width: 767px) {
-        width: 2rem;
+        width: 1.625rem;
       }
     }
     span {
@@ -169,7 +173,9 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       color: #FFFFFF;
       margin-left: 0.875rem;
       @media (max-width: 767px) {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.6px;
       }
     }
   }
@@ -210,9 +216,16 @@ $clock-flip-font-shadow: 0 1px 2px #000;
           padding: 0.5rem 0.75rem;
           display: inline-block;
           text-transform: uppercase;
-    
           margin-bottom: 1.75rem;
           @media (max-width: 767px) {
+            line-height: 1rem;
+            letter-spacing: 4px;
+            color: #64D1B5;
+            padding: 0.5rem 0.625rem;
+            border: 1.5px solid #64D1B5;
+            box-sizing: border-box;
+            border-radius: 1.5px;
+            margin-bottom: 1.25rem;
           }
         }
     
@@ -226,7 +239,12 @@ $clock-flip-font-shadow: 0 1px 2px #000;
           text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
           margin-bottom: 2.5rem;
           @media (max-width: 767px) {
-            font-size: 2rem;
+            font-size: 1.375rem;
+            line-height: 2.4rem;
+            color: #FFFFFF;
+            text-shadow: 0px 0.9px 0.9px rgba(0, 0, 0, 0.25);
+            margin-top: 0;
+            margin-bottom: 0.875rem;
           }
         }
     
@@ -239,7 +257,11 @@ $clock-flip-font-shadow: 0 1px 2px #000;
           text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
           margin-bottom: 3.5rem;
           @media (max-width: 767px) {
-            font-size: 1.25rem;
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #C4C6D0;
+            text-shadow: 0px 1.2px 1.2px rgba(0, 0, 0, 0.25);
+            margin-bottom: 2.5rem;
           }
         }
     
@@ -274,6 +296,10 @@ $clock-flip-font-shadow: 0 1px 2px #000;
             @media (max-width: 767px) {
               width: 100%;
               margin-bottom: 1rem;
+              font-size: 0.875rem;
+              line-height: 1.3125rem;
+              padding: 0.75rem 1.25rem 0.625rem;
+              height: 2.75rem;
             }
           }
     
@@ -291,6 +317,10 @@ $clock-flip-font-shadow: 0 1px 2px #000;
             }
             @media (max-width: 767px) {
               width: 100%;
+              font-size: 0.875rem;
+              line-height: 150%;
+              padding: 0.75rem 1rem;
+              height: 2.75rem;
             }
           }
         }
@@ -299,7 +329,8 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       .product-shot {
         display: none;
         @media (max-width: 767px) {
-          margin-top: 4rem;
+          margin-top: 3rem;
+          margin-right: 0.5rem;
           display: block;
         }
       }
@@ -309,13 +340,15 @@ $clock-flip-font-shadow: 0 1px 2px #000;
   .features {
     margin-top: 10rem;
     @media (max-width: 767px) {
-      margin-top: 4rem;
+      margin-top: 3rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
     .feature {
       text-align: center;
       &.border {
         @media (max-width: 767px) {
-          display: none;
+          
         }   
       }
 
@@ -323,6 +356,8 @@ $clock-flip-font-shadow: 0 1px 2px #000;
         height: 3.75rem;
         margin-bottom: 1rem;
         @media (max-width: 767px) {
+          height: 3.25rem;
+          margin-bottom: 0.75rem;
         }
       }
   
@@ -337,10 +372,12 @@ $clock-flip-font-shadow: 0 1px 2px #000;
         justify-content: center;
         color: #FFFFFF;
         @media (max-width: 767px) {
-          margin-bottom: 2rem;
-          max-width: 12rem;
+          margin-bottom: 1.75rem;
+          max-width: 8rem;
           margin-left: auto;
           margin-right: auto;
+          font-size: 0.75rem;
+          line-height: 1.625rem;
         }
       }
     }
@@ -351,8 +388,8 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     margin-bottom: 5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.42);
     @media (max-width: 767px) {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
+      margin-top: 1.75rem;
+      margin-bottom: 2.25rem;
     }
   }
 
@@ -369,11 +406,9 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     padding-bottom: 3rem;
 
     @media (max-width: 767px) {
-      display: block;
-      text-align: center;
-      div {
-        margin-bottom: 1rem;
-      }
+      font-size: 0.875rem;
+      line-height: 100%;
+      padding-bottom: 0;
     }
 
     a {
@@ -384,7 +419,8 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       cursor: pointer;
       margin-left: 1rem;
       @media (max-width: 767px) {
-        margin-left: 0;
+        font-size: 1.125rem;
+        line-height: 1.125rem;
       }
     }
   }
@@ -418,25 +454,16 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     padding-bottom: 6rem;
     @media (max-width: 767px) {
       display: block;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
 
     .reason {
       display: flex;
       justify-content: center;
       align-items: center;
-      @media (max-width: 767px) {
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-      img {
-        width: 1.75rem;
-        margin-right: 1rem;
-        @media (max-width: 767px) {
-        }
-      }
-
-      font-size: 1.25rem;
       color: #FFFFFF;
+      font-size: 1.25rem;
       line-height: 100%;
       background: #52B7FF;
       border-radius: 0.25rem;
@@ -447,6 +474,23 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       outline: none;
       &:hover {
         background: darken(#52B7FF, 12%);
+      }
+
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        height: 2.75rem;
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+      }
+      img {
+        width: 1.75rem;
+        margin-right: 1rem;
+        @media (max-width: 767px) {
+          width: 1rem;
+          margin-right: 0.5rem;
+        }
       }
     }
 
@@ -466,6 +510,10 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       }
       @media (max-width: 767px) {
         width: 100%;
+        font-size: 0.875rem;
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+        height: 2.75rem;
       }
     }
   }

@@ -19,6 +19,11 @@
       text-align: center;
       color: #FFFFFF;
       cursor: pointer;
+      @media (max-width: 767px) {
+        font-weight: bold;
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+      }
     }
   
     .social {

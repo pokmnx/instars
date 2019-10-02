@@ -9977,6 +9977,11 @@ img {
       text-align: center;
       color: #FFFFFF;
       cursor: pointer; }
+      @media (max-width: 767px) {
+        .main-footer > div a {
+          font-weight: bold;
+          font-size: 0.75rem;
+          line-height: 1.5rem; } }
     .main-footer > div .social {
       display: flex; }
       .main-footer > div .social a {
@@ -10932,6 +10937,10 @@ img {
   background: url(./images/background.png);
   background-size: cover;
   background-repeat: no-repeat; }
+  @media (max-width: 767px) {
+    .home {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
   .home .header {
     display: flex;
     justify-content: center;
@@ -10941,13 +10950,13 @@ img {
     @media (max-width: 767px) {
       .home .header {
         padding-top: 2rem;
-        padding-bottom: 2rem; } }
+        padding-bottom: 4rem; } }
     .home .header img {
       width: 3.5rem;
       box-shadow: 0px 0.08px 0.08px rgba(0, 0, 0, 0.3); }
       @media (max-width: 767px) {
         .home .header img {
-          width: 2rem; } }
+          width: 1.625rem; } }
     .home .header span {
       font-style: normal;
       font-weight: 600;
@@ -10960,7 +10969,9 @@ img {
       margin-left: 0.875rem; }
       @media (max-width: 767px) {
         .home .header span {
-          font-size: 1.5rem; } }
+          font-size: 1rem;
+          line-height: 1.25rem;
+          letter-spacing: 0.6px; } }
   .home .main-section {
     background-image: url("./images/product_shot.png");
     background-repeat: no-repeat;
@@ -10995,6 +11006,16 @@ img {
         display: inline-block;
         text-transform: uppercase;
         margin-bottom: 1.75rem; }
+        @media (max-width: 767px) {
+          .home .main-section .main-form .apply-form .introducing {
+            line-height: 1rem;
+            letter-spacing: 4px;
+            color: #64D1B5;
+            padding: 0.5rem 0.625rem;
+            border: 1.5px solid #64D1B5;
+            box-sizing: border-box;
+            border-radius: 1.5px;
+            margin-bottom: 1.25rem; } }
       .home .main-section .main-form .apply-form h2 {
         font-size: 3.375rem;
         font-weight: bold;
@@ -11006,7 +11027,12 @@ img {
         margin-bottom: 2.5rem; }
         @media (max-width: 767px) {
           .home .main-section .main-form .apply-form h2 {
-            font-size: 2rem; } }
+            font-size: 1.375rem;
+            line-height: 2.4rem;
+            color: #FFFFFF;
+            text-shadow: 0px 0.9px 0.9px rgba(0, 0, 0, 0.25);
+            margin-top: 0;
+            margin-bottom: 0.875rem; } }
       .home .main-section .main-form .apply-form h5 {
         font-size: 1.75rem;
         line-height: 175%;
@@ -11017,7 +11043,11 @@ img {
         margin-bottom: 3.5rem; }
         @media (max-width: 767px) {
           .home .main-section .main-form .apply-form h5 {
-            font-size: 1.25rem; } }
+            font-size: 1rem;
+            line-height: 1.75rem;
+            color: #C4C6D0;
+            text-shadow: 0px 1.2px 1.2px rgba(0, 0, 0, 0.25);
+            margin-bottom: 2.5rem; } }
       .home .main-section .main-form .apply-form .form {
         display: flex; }
         @media (max-width: 767px) {
@@ -11048,7 +11078,11 @@ img {
           @media (max-width: 767px) {
             .home .main-section .main-form .apply-form .form input {
               width: 100%;
-              margin-bottom: 1rem; } }
+              margin-bottom: 1rem;
+              font-size: 0.875rem;
+              line-height: 1.3125rem;
+              padding: 0.75rem 1.25rem 0.625rem;
+              height: 2.75rem; } }
         .home .main-section .main-form .apply-form .form button {
           font-size: 1.25rem;
           line-height: 150%;
@@ -11062,26 +11096,34 @@ img {
             background: #1e92e6; }
           @media (max-width: 767px) {
             .home .main-section .main-form .apply-form .form button {
-              width: 100%; } }
+              width: 100%;
+              font-size: 0.875rem;
+              line-height: 150%;
+              padding: 0.75rem 1rem;
+              height: 2.75rem; } }
       .home .main-section .main-form .product-shot {
         display: none; }
         @media (max-width: 767px) {
           .home .main-section .main-form .product-shot {
-            margin-top: 4rem;
+            margin-top: 3rem;
+            margin-right: 0.5rem;
             display: block; } }
   .home .features {
     margin-top: 10rem; }
     @media (max-width: 767px) {
       .home .features {
-        margin-top: 4rem; } }
+        margin-top: 3rem;
+        margin-left: 2rem;
+        margin-right: 2rem; } }
     .home .features .feature {
       text-align: center; }
-      @media (max-width: 767px) {
-        .home .features .feature.border {
-          display: none; } }
       .home .features .feature img {
         height: 3.75rem;
         margin-bottom: 1rem; }
+        @media (max-width: 767px) {
+          .home .features .feature img {
+            height: 3.25rem;
+            margin-bottom: 0.75rem; } }
       .home .features .feature label {
         font-style: normal;
         font-weight: bold;
@@ -11094,18 +11136,20 @@ img {
         color: #FFFFFF; }
         @media (max-width: 767px) {
           .home .features .feature label {
-            margin-bottom: 2rem;
-            max-width: 12rem;
+            margin-bottom: 1.75rem;
+            max-width: 8rem;
             margin-left: auto;
-            margin-right: auto; } }
+            margin-right: auto;
+            font-size: 0.75rem;
+            line-height: 1.625rem; } }
   .home hr {
     margin-top: 5rem;
     margin-bottom: 5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.42); }
     @media (max-width: 767px) {
       .home hr {
-        margin-top: 3rem;
-        margin-bottom: 3rem; } }
+        margin-top: 1.75rem;
+        margin-bottom: 2.25rem; } }
   .home .giveaway {
     display: flex;
     justify-content: center;
@@ -11118,10 +11162,9 @@ img {
     padding-bottom: 3rem; }
     @media (max-width: 767px) {
       .home .giveaway {
-        display: block;
-        text-align: center; }
-        .home .giveaway div {
-          margin-bottom: 1rem; } }
+        font-size: 0.875rem;
+        line-height: 100%;
+        padding-bottom: 0; } }
     .home .giveaway a {
       font-size: 2rem;
       line-height: 100%;
@@ -11131,7 +11174,8 @@ img {
       margin-left: 1rem; }
       @media (max-width: 767px) {
         .home .giveaway a {
-          margin-left: 0; } }
+          font-size: 1.125rem;
+          line-height: 1.125rem; } }
   .home .countdown-wrapper {
     margin-top: 4rem; }
     .home .countdown-wrapper .countdown {
@@ -11152,13 +11196,15 @@ img {
     padding-bottom: 6rem; }
     @media (max-width: 767px) {
       .home .actions {
-        display: block; } }
+        display: block;
+        padding-top: 4rem;
+        padding-bottom: 4rem; } }
     .home .actions .reason {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.25rem;
       color: #FFFFFF;
+      font-size: 1.25rem;
       line-height: 100%;
       background: #52B7FF;
       border-radius: 0.25rem;
@@ -11167,15 +11213,23 @@ img {
       margin-right: 3rem;
       border: none;
       outline: none; }
+      .home .actions .reason:hover {
+        background: #159eff; }
       @media (max-width: 767px) {
         .home .actions .reason {
           width: 100%;
-          margin-bottom: 1rem; } }
+          margin-bottom: 1rem;
+          font-size: 0.875rem;
+          height: 2.75rem;
+          padding-top: 0.625rem;
+          padding-bottom: 0.625rem; } }
       .home .actions .reason img {
         width: 1.75rem;
         margin-right: 1rem; }
-      .home .actions .reason:hover {
-        background: #159eff; }
+        @media (max-width: 767px) {
+          .home .actions .reason img {
+            width: 1rem;
+            margin-right: 0.5rem; } }
     .home .actions .access {
       font-size: 1.25rem;
       line-height: 100%;
@@ -11191,4 +11245,8 @@ img {
         background: rgba(0, 0, 0, 0.25); }
       @media (max-width: 767px) {
         .home .actions .access {
-          width: 100%; } }
+          width: 100%;
+          font-size: 0.875rem;
+          padding-top: 0.625rem;
+          padding-bottom: 0.625rem;
+          height: 2.75rem; } }
