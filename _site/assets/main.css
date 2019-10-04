@@ -10907,14 +10907,17 @@ img {
       height: 51px;
       width: 1rem; } }
 
+.countdown .flip-clock-divider.days .flip-clock-label,
 .countdown .flip-clock-divider.hours .flip-clock-label,
 .countdown .flip-clock-divider.seconds .flip-clock-label,
 .countdown .flip-clock-divider.minutes .flip-clock-label {
   right: -186px; }
   @media (max-width: 767px) {
+    .countdown .flip-clock-divider.days .flip-clock-label,
     .countdown .flip-clock-divider.hours .flip-clock-label,
     .countdown .flip-clock-divider.seconds .flip-clock-label,
     .countdown .flip-clock-divider.minutes .flip-clock-label {
+      display: none;
       right: -93px; } }
 
 .countdown .flip-clock-divider .flip-clock-label {
@@ -11176,6 +11179,18 @@ img {
         .home .giveaway a {
           font-size: 1.125rem;
           line-height: 1.125rem; } }
+  .home .timer-label {
+    display: none; }
+    @media (max-width: 767px) {
+      .home .timer-label {
+        display: flex;
+        flex-flow: row; }
+        .home .timer-label .t-label {
+          width: 25%;
+          text-align: center;
+          font-size: 12px;
+          line-height: 16px;
+          color: white; } }
   .home .countdown-wrapper {
     margin-top: 4rem; }
     .home .countdown-wrapper .countdown {

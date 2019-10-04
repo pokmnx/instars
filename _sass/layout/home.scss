@@ -108,11 +108,13 @@ $clock-flip-font-shadow: 0 1px 2px #000;
   }
 }
 
+.countdown .flip-clock-divider.days .flip-clock-label,
 .countdown .flip-clock-divider.hours .flip-clock-label,
 .countdown .flip-clock-divider.seconds .flip-clock-label,
 .countdown .flip-clock-divider.minutes .flip-clock-label {
   right: -1 * $clock-flip-section-width;
   @media (max-width: 767px) {
+    display: none;
     right: -1 * $clock-flip-section-width / 2;
   }
 }
@@ -132,7 +134,6 @@ $clock-flip-font-shadow: 0 1px 2px #000;
     width: $clock-flip-width + 2 * $clock-flip-margin;
   }
 }
-
 
 
 .home {
@@ -421,6 +422,21 @@ $clock-flip-font-shadow: 0 1px 2px #000;
       @media (max-width: 767px) {
         font-size: 1.125rem;
         line-height: 1.125rem;
+      }
+    }
+  }
+
+  .timer-label {
+    display: none;
+    @media (max-width: 767px) {
+      display: flex;
+      flex-flow: row;
+      .t-label {
+        width: 25%;
+        text-align: center;
+        font-size: 12px;
+        line-height: 16px;
+        color: white;
       }
     }
   }
