@@ -11162,7 +11162,8 @@ img {
     display: flex;
     align-items: center;
     color: #F2F2F2;
-    padding-bottom: 3rem; }
+    padding-bottom: 3rem;
+    margin-top: 6rem; }
     @media (max-width: 767px) {
       .home .giveaway {
         font-size: 0.875rem;
