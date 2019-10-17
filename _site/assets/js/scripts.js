@@ -2,7 +2,7 @@ $(document).ready(function () {
 	new WOW().init();
 	$('html').addClass('wow_active');
 
-	const startDate = new Date(2019, 9, 10);
+	const startDate = new Date(2019, 9, 17);
 	const date = new Date();
 	const diff = (date.getTime() - startDate.getTime())/1000;
 
