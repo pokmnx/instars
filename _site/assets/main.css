@@ -11039,11 +11039,14 @@ img {
       .home .main-section .main-form .apply-form h5 {
         font-size: 1.75rem;
         line-height: 175%;
-        display: flex;
-        align-items: center;
+        display: block;
         color: #C4C6D0;
         text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
         margin-bottom: 3.5rem; }
+        .home .main-section .main-form .apply-form h5 span {
+          color: #64D1B5; }
+        .home .main-section .main-form .apply-form h5 a {
+          color: #64D1B5; }
         @media (max-width: 767px) {
           .home .main-section .main-form .apply-form h5 {
             font-size: 1rem;
